@@ -9,6 +9,12 @@
   <link rel="stylesheet" crossorigin href="/Songs_GoatCounter/assets/index-CVOw8Kaf.css">
 </head>
 <body>
+  <script>
+  window.goatcounter = {
+    path: "/Songs_GoatCounter",  // 👈 必须与 GoatCounter 控制面板里一致
+    visit_count: true
+  };
+</script>
 	<!-- 顶部 Banner -->
 	<header class="banner fade-in">
 	  <div class="avatar">
@@ -32,14 +38,8 @@
   </footer>
 
   <!-- 👇 关键代码：告诉 GoatCounter 显示访问次数 -->
-  <script>
-    window.goatcounter = {
-      path: location.pathname,
-      visit_count: true
-    };
-  </script>
   <script data-goatcounter="https://songs-goat.goatcounter.com/count"
-          async src="https://gc.zgo.at/count.js"></script>
+        async src="https://gc.zgo.at/count.js"></script>
 
 </body>
 </html>
