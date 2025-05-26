@@ -24,16 +24,22 @@
   <h1>Popular Songs List</h1>
 
   <div id="song-list"></div>
+
   <footer class="footer">
     <p>© 2025 二分歌台 | 用音乐点亮心灵</p>
     <p>本站访问次数：<span data-goatcounter-show="visits">加载中...</span></p>
     <a href="#">返回顶部 ↑</a>
   </footer>
 
-<script data-goatcounter="https://songs-goat.goatcounter.com/count"
-        data-goatcounter-settings='{"path": "/Songs_GoatCounter/"}'
-        async src="https://gc.zgo.at/count.js"></script>
-
+  <!-- 👇 关键代码：告诉 GoatCounter 显示访问次数 -->
+  <script>
+    window.goatcounter = {
+      path: location.pathname,
+      visit_count: true
+    };
+  </script>
+  <script data-goatcounter="https://songs-goat.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
 
 </body>
 </html>
