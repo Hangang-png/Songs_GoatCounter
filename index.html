@@ -31,15 +31,13 @@
     <p>本站访问次数：<span data-goatcounter-show="visits">干活中2...</span></p>
     <a href="#">返回顶部 ↑</a>
   </footer>
- <!-- 设置 GoatCounter 路径 -->
 <script>
   window.goatcounter = {
-    path: function() {
-      return location.pathname;
-    }
+    path: location.host + location.pathname
   };
 </script>
- 
+
+
 <!-- GoatCounter 统计脚本 -->
 <script data-goatcounter="https://songs-goat.goatcounter.com/count"
         async src="https://gc.zgo.at/count.js"></script>
