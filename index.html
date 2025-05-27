@@ -33,12 +33,11 @@
   </footer>
 <script>
   window.goatcounter = {
-    path: location.host + location.pathname
+    // 完整路径建议加入 protocol，避免某些 GoatCounter 配置解析失败
+    path: location.href.replace(location.origin, '')
   };
 </script>
 
-
-<!-- GoatCounter 统计脚本 -->
 <script data-goatcounter="https://songs-goat.goatcounter.com/count"
         async src="https://gc.zgo.at/count.js"></script>
 
