@@ -30,7 +30,19 @@
     <p>© 2025 二分歌台 | 用音乐点亮心灵</p>
     <p>本站访问次数：<span data-goatcounter-show="visits">干活中2...</span></p>
     <a href="#">返回顶部 ↑</a>
+    <!-- 添加转到歌曲表1的按钮 -->
+    <button id="redirect-button">转到歌曲表1</button>
   </footer>
+
+  <script>
+    // 获取按钮元素
+    const redirectButton = document.getElementById('redirect-button');
+
+    // 为按钮添加点击事件，跳转到歌曲表1的页面
+    redirectButton.addEventListener('click', () => {
+      window.location.href = 'https://hangang-png.github.io/popularSongs/'; // 替换为你的歌曲表1的链接
+    });
+  </script>
 <script>
   window.goatcounter = {
     // 完整路径建议加入 protocol，避免某些 GoatCounter 配置解析失败
