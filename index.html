@@ -49,8 +49,10 @@
         async src="https://gc.zgo.at/count.js"></script>
 
 <script>
+  window.onload = function() {
   window.goatcounter = {
-  path: decodeURIComponent(location.href.replace(location.origin, ''))
+    path: location.href.replace(location.origin, '')
+  };
 };
 
 </script>
