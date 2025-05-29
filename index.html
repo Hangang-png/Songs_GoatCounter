@@ -6,14 +6,14 @@
   <title>Popular Songs</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   
-  <!-- 预连接GoatCounter服务器提升性能 -->
+  <!-- 预连接提升性能 -->
   <link rel="preconnect" href="https://gc.zgo.at">
   <link rel="preconnect" href="https://songs-goat.goatcounter.com">
   <script type="module" crossorigin src="/Songs_GoatCounter/assets/index-dDNJg4Kk.js"></script>
   <link rel="stylesheet" crossorigin href="/Songs_GoatCounter/assets/index-CVOw8Kaf.css">
 </head>
 <body>
-  <!-- 你的页面内容保持不变... -->
+  <!-- 原有内容保持不变... -->
   
   <footer class="footer">
     <p>© 2025 二分歌台 | 用音乐点亮心灵</p>
@@ -28,24 +28,34 @@
       window.location.href = 'https://hangang-png.github.io/popularSongs/';
     });
     
-    // 更完善的GoatCounter集成
+    // 更稳定的GoatCounter集成
     window.goatcounter = {
-      path: function(p) {
-        return location.pathname + location.search + location.hash;
-      },
+      allow_local: true,  // 允许本地测试
+      no_onload: true,    // 禁用自动加载，等我们准备好再触发
+      
       done: function(data) {
         // 统计完成后回调
         if(data && data.count) {
-          document.getElementById('visit-counter').textContent = data.count.toLocaleString();
+          const counterEl = document.getElementById('visit-counter');
+          if(counterEl) {
+            counterEl.textContent = data.count.toLocaleString();
+          }
         }
       }
     };
+    
+    // 确保DOM完全加载后再触发统计
+    document.addEventListener('DOMContentLoaded', function() {
+      if(window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count();
+      }
+    });
   </script>
 
   <!-- GoatCounter脚本放在body底部 -->
   <script data-goatcounter="https://songs-goat.goatcounter.com/count"
-          data-goatcounter-settings='{"allow_local": true}'
           async src="https://gc.zgo.at/count.js"></script>
 
+  <!-- 你的其他脚本 -->
 </body>
 </html>
